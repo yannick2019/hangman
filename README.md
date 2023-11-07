@@ -22,6 +22,7 @@ Optionally it can:
 - only let the player guess a letter once
 
 ## Preview
+![sreen shot of website](./images/screen-shot.png)
 
 ## See it live
 
