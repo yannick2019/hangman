@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Jeu du pendu">
+        <link rel="stylesheet" href="style.css">
+        <title>Jeu du pendu</title>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li class="instructions"><a href="#">Instructions</a></li>
+                <li class="reset"><a href="#">Réinitialiser</a></li>
+                <li class="switch-mode-toggle">
+                    <input type="checkbox" id="dark-mode-toggle" />
+                    <label for="dark-mode-toggle">
+                        <svg class="sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><circle cx="12" cy="12" r="5" stroke="#1C274C" stroke-width="1.5"></circle><path d="M12 2V4" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M12 20V22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M4 12L2 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M22 12L20 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M19.7778 4.22266L17.5558 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M4.22217 4.22266L6.44418 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M6.44434 17.5557L4.22211 19.7779" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path><path d="M19.7778 19.7773L17.5558 17.5551" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path></g></svg>
+                        <svg class="moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+                    </label>
+                </li>
+            </ul>
+        </header>
+
+        <h1>Jeu du pendu</h1>
+        <p>Trouve le mot caché - Entre une lettre à la fois!</p>
+
+        <section class="game-content">
+
+            <svg height="250" width="200" class="figure-content">
+
+                <!-- Support -->
+    
+                <line x1="60" y1="20" x2="140" y2="20" />
+                <line x1="140" y1="20" x2="140" y2="50" />
+                <line x1="60" y1="20" x2="60" y2="230" />
+                <line x1="20" y1="230" x2="100" y2="230" />
+    
+                <!-- Bonhomme -->
+    
+                <!-- Head -->
+                <circle cx="140" cy="70" r="20" class="hangman the-head" />
+    
+                <!-- Body -->
+                <line x1="140" y1="90" x2="140" y2="160" class="hangman the-body" />
+    
+                <!-- Hands -->
+                <line x1="140" y1="100" x2="110" y2="130" class="hangman left-hand" />
+                <line x1="170" y1="130" x2="140" y2="100" class="hangman right-hand" />
+    
+                <!-- Legs -->
+                <line x1="140" y1="160" x2="110" y2="190" class="hangman left-leg" />
+                <line x1="170" y1="190" x2="140" y2="160" class="hangman right-leg" />
+    
+            </svg>
+    
+            <section class="wrong-letters-container">
+                <p>Mauvaises lettres :</p>
+                <div id="wrong-letters"></div>
+            </section>
+    
+            <section class="word" id="word"></section>
+
+        </section>
+
+        <!-- final msg content -->
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2>Bravo, tu as gagné!</h2>
+                <button id="play-btn">Rejouer!</button>
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="notifications-container" id="notifications-container">
+            <p>Vous avez déjà essayé cette lettre!</p>
+        </div>
+
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
