@@ -110,7 +110,7 @@ window.addEventListener("keydown", e => {
 
     const letter = e.key.toLowerCase();
 
-    if (letter >= 'a' && letter <= 'z') {
+    if (/^[a-zàâçéèêëîïôûùüÿœæ]$/.test(letter)) {
         if (selectedWord.includes(letter)) {
             if (!goodLettersArray.includes(letter)) {
                 goodLettersArray.push(letter);
