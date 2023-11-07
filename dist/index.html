@@ -3,16 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Jeu du pendu">
+        <meta name="description" content="Jeu du pendu. Trouve le mot caché">
+        <meta name="theme-color" content="#ecf0f1" />
+        <link rel="icon" type="image/x-icon" href="/hangman/assets/favicon-4561849d.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfnCwcWHwoYtrBwAAABY0lEQVQ4y62TT0sCQRjGn9l/iWulIoWVWqEiGHao8FoUdOordO6T9DE6d6xj4V2o6I8IFRYkbEm5Wa4sLm4722FXiHz1Uu9lZl5+87zPvDPDXIwOAf8E8KGVJG84dkICkxSRwUwnKaCam2eSLIuCcH9OAmY05ydmH0kPcqufcE0SWHj319Z15YYClnVvfDh83b1oEB5iuhUA4JY3EzC0+KCCWHsDADZ91Ww3JwiFkFVPAsDG5UGwkCaA8VTXO02xlViiTIrhoDexP3pkq+FYAMAr1du7l5n82IACAgoAOPbWXiZbbxMKkRgAyGvQkckSHlyT9zMdDgKwa/5l8LLRowDn06vLS3bxxCGArr+v3NlZl09/Pi/fpO3vWlyRsd2hLqtgAADiAKQI1cmcBjr6jZprDAGYC67BfT4qFSfzgalV9TcgAfb+magbzlMoHE2mVEIBWhPiF1OCqiopjAJGxt8/7zeofm68TxKwaQAAADp0RVh0Q29tbWVudAB4cjpkOkRBRnpoYjRTRWNnOjMsajozMzM2NzQ4NjM2NzM1NzczNTksdDoyMzExMDcyMdnF2/EAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMTEtMDdUMjI6MzE6MTArMDA6MDBBIPSeAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTExLTA3VDIyOjMxOjEwKzAwOjAwMH1MIgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==">
+        <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfnCwcWHwoYtrBwAAAAoUlEQVQY013PsQrCMBSF4XPT2GgVK6KLCAXBpZ18GB/XzcFdEERBHJRORVtqlaS9DiUBPeM3/YcYv5MAGwAQnoP3Zq4U5Ym0UJeJJN59WhBAt6eJL+kVFqR5QKerki0AGfzlcUEORgJNXhTGgfLB4UzXDl4NvLCaKgdpDj5Nbo3tQMeAo6BypYiymvoIWiA+bPfnOF4PYeF5Z6EGY8/B3/0vyZ434OJb58IAAAA6dEVYdENvbW1lbnQAeHI6ZDpEQUZ6aGI0U0VjZzozLGo6MzMzNjc0ODYzNjczNTc3MzU5LHQ6MjMxMTA3MjHZxdvxAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTExLTA3VDIyOjMxOjEwKzAwOjAwQSD0ngAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0xMS0wN1QyMjozMToxMCswMDowMDB9TCIAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=">
+        <link rel="manifest" href="data:application/json;base64,ewogICAgIm5hbWUiOiAiSmV1IGR1IHBlbmR1IiwKICAgICJzaG9ydF9uYW1lIjogIkpldSBkdSBwZW5kdSIsCiAgICAiZGVzY3JpcHRpb24iOiAiSmV1IGR1IHBlbmR1LiBUcm91dmUgbGUgbW90IGNhY2jDqSIsCiAgICAic3RhcnRfdXJsIjogIi8iLAogICAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmIiwKICAgICJ0aGVtZV9jb2xvciI6ICIjZWNmMGYxIiwKICAgICJpY29ucyI6IFsKICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiLi9pbWFnZXMvaGFuZ21hbi0xOTIucG5nIiwKICAgICAgICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAgICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIuL2ltYWdlcy9oYW5nbWFuLnBuZyIsIAogICAgICAgICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsCiAgICAgICAgICAgICJwdXJwb3NlIjogIm1hc2thYmxlIiAKICAgICAgICB9CiAgICBdICAgIAp9CiAg" />
         
         <title>Jeu du pendu</title>
-      <script type="module" crossorigin src="/hangman/assets/index-168f5716.js"></script>
-      <link rel="stylesheet" href="/hangman/assets/index-efead7a3.css">
+      <script type="module" crossorigin src="/hangman/assets/index-757236bf.js"></script>
+      <link rel="stylesheet" href="/hangman/assets/index-e5e9ac04.css">
     </head>
     <body>
         <header>
             <ul>
-                <li class="instructions"><a href="#">Rules</a></li>
+                <li class="instructions"><a href="#">Règles</a></li>
                 <li class="reset"><a href="#">Réinitialiser</a></li>
                 <li class="switch-mode-toggle">
                     <input type="checkbox" id="dark-mode-toggle" />
