@@ -1,0 +1,23 @@
+{
+    "name": "Jeu du pendu",
+    "short_name": "Jeu du pendu",
+    "description": "Jeu du pendu. Trouve le mot caché",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#ecf0f1",
+    "icons": [
+        {
+            "src": "./images/hangman-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+        {
+            "src": "./images/hangman.png", 
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable" 
+        }
+    ]    
+}
+  

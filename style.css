@@ -248,7 +248,7 @@ h1 {
 }
 
 .rules {
-    width: 450px;
+    width: 414px;
     height: 520px;
     background-color: #ecf0f1;
     border-radius: 5px;
@@ -310,3 +310,24 @@ h1.dark-mode {
 }
 
 /* light/dark mode END */
+
+
+@media screen and (max-width: 375px) {
+    body {
+        font-size: 92%;
+    }
+
+    .game-content {
+        width: 380px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+    body {
+        font-size: 96%;
+    }
+
+    .game-content {
+        width: 400px;
+    }
+}
