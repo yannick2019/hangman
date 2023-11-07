@@ -25,7 +25,7 @@ Optionally it can:
 
 ## See it live
 
-Live version [here]().
+Live version [here](https://yannick2019.github.io/hangman/).
 
 ## Technologies used
 - Vite js
