@@ -46,7 +46,7 @@ ul {
 }
 
 label {
-    width: 66px;
+    width: 60px;
     height: 26px;
     position: relative;
     top: 2px;
@@ -137,10 +137,9 @@ h1 {
     fill: transparent;
 }
 
-/*
 .hangman {
     display: none;
-} */
+} 
 
 .wrong-letters-container {
     position: absolute;
@@ -231,3 +230,83 @@ h1 {
 .notifications-container.display {
     transform: translateY(-80px);
 }
+
+
+/* Instructions START */
+
+.instruction-container {
+    line-height: 32px;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.rules {
+    width: 450px;
+    height: 520px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    overflow:scroll;
+}
+
+/* Instructions END */
+
+
+/* light/dark mode START */
+  
+body.dark-mode  {
+    background-color: #222222;
+    color: #fff;
+}
+
+h1.dark-mode {
+    text-shadow: 2px 2px 2px #000000; 
+}
+  
+.dark-mode .game-content {
+    background-color: #333333; 
+}
+  
+.wrong-letters-container.dark-mode {
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+  
+.wrong-letters-container p.dark-mode {
+    color: #fff;
+}
+.wrong-letters-container span.dark-mode {
+    color: #fff; 
+}
+
+.dark-mode .letter {
+    border-bottom: 3px solid #fff;
+}
+
+.dark-mode .popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .popup {
+    background-color: #fff;
+    color: black;
+}
+
+.dark-mode .popup button {
+    background-color: #222222;
+    color: #fff;
+}
+
+.dark-mode .instruction-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #222222;
+}
+
+/* light/dark mode END */

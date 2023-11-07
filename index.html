@@ -10,7 +10,7 @@
     <body>
         <header>
             <ul>
-                <li class="instructions"><a href="#">Instructions</a></li>
+                <li class="instructions"><a href="#">Rules</a></li>
                 <li class="reset"><a href="#">Réinitialiser</a></li>
                 <li class="switch-mode-toggle">
                     <input type="checkbox" id="dark-mode-toggle" />
@@ -63,10 +63,25 @@
 
         </section>
 
+        <!-- instructions -->
+        <section class="instruction-container">
+            <div class="rules">
+                <h2>Règles du jeu</h2>
+                <p><strong>Objectif du jeu :</strong> Le but du jeu du pendu est de deviner un mot ou une phrase en devinant les lettres qui le composent, tout en évitant de faire un certain nombre d'erreurs.</p>
+                <h3>Déroulement du jeu :</h3>
+                <p>Le jeu se termine dans l'une des situations suivantes :</p>
+                <p>* Le joueur devine correctement le mot ou la phrase sans faire trop d'erreurs. Il remporte la partie.</p>
+                <p>* Le joueur commet un nombre maximum d'erreurs, et le mot ou la phrase est révélé. Le joueur perd la partie.</p>
+                <h3>Règles supplémentaires :</h3>
+                <p>* Le nombre d'erreurs accepté varie, mais il est courant de représenter un pendu complet avec six erreurs (tête, corps, bras, jambes).</p>
+                <p>* Le joueur peut proposer des lettres ou essayer de deviner le mot ou la phrase à tout moment. S'il se trompe dans sa tentative de deviner le mot, cela compte comme une erreur.</p>
+            </div>
+        </section>
+
         <!-- final msg content -->
         <div class="popup-container" id="popup-container">
             <div class="popup">
-                <h2>Bravo, tu as gagné!</h2>
+                <h2 id="final-msg"></h2>
                 <button id="play-btn">Rejouer!</button>
             </div>
         </div>
