@@ -26,7 +26,8 @@
                 </li>
             </ul>
         </header>
-
+        <br>
+        <p style="text-align: center;"><img class="img" src="./images/favicon-32x32.png" alt="hangman"></p>
         <h1>Jeu du pendu</h1>
         <p>Trouve le mot caché - Entre une lettre à la fois!</p>
 
@@ -71,15 +72,16 @@
         <!-- instructions -->
         <section class="instruction-container">
             <div class="rules">
+                <p style="text-align: center;"><img src="./images/favicon-32x32.png" alt="hangman"></p>
                 <h2>Règles du jeu</h2>
                 <p><strong>Objectif du jeu :</strong> Le but du jeu du pendu est de deviner un mot ou une phrase en devinant les lettres qui le composent, tout en évitant de faire un certain nombre d'erreurs.</p>
                 <h3>Déroulement du jeu :</h3>
                 <p>Le jeu se termine dans l'une des situations suivantes :</p>
-                <p>* Le joueur devine correctement le mot ou la phrase sans faire trop d'erreurs. Il remporte la partie.</p>
-                <p>* Le joueur commet un nombre maximum d'erreurs, et le mot ou la phrase est révélé. Le joueur perd la partie.</p>
+                <p><img src="./images/favicon-16x16.png" alt="hangman"> Le joueur devine correctement le mot ou la phrase sans faire trop d'erreurs. Il remporte la partie.</p>
+                <p><img src="./images/favicon-16x16.png" alt="hangman"> Le joueur commet un nombre maximum d'erreurs, et le mot ou la phrase est révélé. Le joueur perd la partie.</p>
                 <h3>Règles supplémentaires :</h3>
-                <p>* Le nombre d'erreurs accepté varie, mais il est courant de représenter un pendu complet avec six erreurs (tête, corps, bras, jambes).</p>
-                <p>* Le joueur peut proposer des lettres ou essayer de deviner le mot ou la phrase à tout moment. S'il se trompe dans sa tentative de deviner le mot, cela compte comme une erreur.</p>
+                <p><img src="./images/favicon-16x16.png" alt="hangman"> Le nombre d'erreurs accepté varie, mais il est courant de représenter un pendu complet avec six erreurs (tête, corps, bras, jambes).</p>
+                <p><img src="./images/favicon-16x16.png" alt="hangman"> Le joueur peut proposer des lettres ou essayer de deviner le mot ou la phrase à tout moment. S'il se trompe dans sa tentative de deviner le mot, cela compte comme une erreur.</p>
             </div>
         </section>
 
@@ -87,6 +89,7 @@
         <div class="popup-container" id="popup-container">
             <div class="popup">
                 <h2 id="final-msg"></h2>
+                <p id="display-guessing-word" style="display: none; margin-top: 6px;"></p>
                 <button id="play-btn">Rejouer!</button>
             </div>
         </div>

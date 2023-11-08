@@ -41,13 +41,14 @@ ul {
 
 
 /* Toggle button dark/light mode  START */
+
 .switch-mode-toggle {
     display: flex;
 }
 
 label {
     width: 60px;
-    height: 26px;
+    height: 24px;
     position: relative;
     top: 2px;
     display: block;
@@ -59,14 +60,13 @@ label {
 }
 label:after {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     position: absolute;
     top: 2px;
     left: 2px;
     background: linear-gradient(180deg, #ecf0f1, #d8e1e3);
-    border-radius: 24px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;    
     transition: 0.3s;
 }
 input {
@@ -88,17 +88,17 @@ label:active:after {
 
 label svg {
     position: absolute;
-    width: 20px;
+    width: 16px;
     top: 3px;
     z-index: 100;
 }
 label svg.sun {
-    left: 3px;
+    left: 4px;
     fill: #fff;
     transition: 0.3s;
 }
 label svg.moon {
-    left: 39px;
+    left: 42px;
     fill: #7e7e7e;
     transition: 0.3s;
 }
@@ -125,7 +125,7 @@ h1 {
     padding: 20px 30px;
     height: 350px;
     width: 450px;
-    margin: auto;
+    margin-top: 12px;
     position: relative;
 }
 

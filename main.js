@@ -12,7 +12,7 @@ const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 const hangman = document.querySelectorAll(".hangman");
 
-const words = ["java", "python", "php", "javascript"];
+const words = ["java", "python", "php", "javascript", "vite", "bootstrap"];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
@@ -74,15 +74,18 @@ function toggleDarkMode() {
     const body = document.body;
     const a = document.querySelectorAll("a");
     const figureContent = document.querySelector(".figure-content");
+    const img = document.querySelector(".img");
 
     body.classList.toggle("dark-mode");
 
     if (body.className === "dark-mode"){        
         a.forEach(link => link.style.color = "#fff");
-        figureContent.style.stroke = "#fff";      
+        figureContent.style.stroke = "#fff";  
+        img.setAttribute("src", "./images/favicon-32x32-white.png");
     } else {
         a.forEach(link => link.style.color = "black"); 
         figureContent.style.stroke = "black"; 
+        img.setAttribute("src", "./images/favicon-32x32.png");
     }
 }
   
