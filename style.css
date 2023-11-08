@@ -13,7 +13,6 @@ body {
     flex-direction: column;
     align-items: center;
     height: 80vh;
-    overflow: hidden;
 }
 
 a {
@@ -223,15 +222,16 @@ h1 {
 .notifications-container {
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
     padding: 15px 20px;
     position: absolute;
-    bottom: -80px;
+    bottom: 80px;
+    display: none;
     transition: transform 0.3 ease-in-out;
 }
 
 .notifications-container.display {
-    transform: translateY(-80px);
+    display: block;
 }
 
 
