@@ -65,7 +65,11 @@ function updateWrongLetterEl() {
 
     // check if the player has lost
     if (wrongLettersArray.length === hangman.length) {
+        const displayGuessingWord = document.getElementById("display-guessing-word");
+
         finalMessage.innerText = "Malheureusement, tu as perdu! 😔";
+        displayGuessingWord.style.display = "block";
+        displayGuessingWord.innerText = `Mot caché : ${selectedWord}`;
         popup.style.display = "flex";
     }
 }
