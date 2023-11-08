@@ -39,6 +39,9 @@ ul {
     gap: 6%;
 }
 
+.img {
+    padding: 2px;
+}
 
 /* Toggle button dark/light mode  START */
 

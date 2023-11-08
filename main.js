@@ -85,11 +85,11 @@ function toggleDarkMode() {
     if (body.className === "dark-mode"){        
         a.forEach(link => link.style.color = "#fff");
         figureContent.style.stroke = "#fff";  
-        img.setAttribute("src", "./images/favicon-32x32-white.png");
+        img.style.backgroundColor = "#fff";
     } else {
         a.forEach(link => link.style.color = "black"); 
         figureContent.style.stroke = "black"; 
-        img.setAttribute("src", "./images/favicon-32x32.png");
+        img.style.removeProperty("background-color");
     }
 }
   
