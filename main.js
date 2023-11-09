@@ -13,15 +13,26 @@ const virtualKeyboard = document.getElementById("virtual-keyboard");
 
 const hangman = document.querySelectorAll(".hangman");
 
-const words = ["java", "python", "php", "javascript", "vite", "bootstrap", "laravel", "react", "github"];
+//const words = ["java", "python", "php", "javascript", "vite", "bootstrap", "laravel", "react", "github"];
 
-let selectedWord = words[Math.floor(Math.random() * words.length)];
+//let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const goodLettersArray = [];
 const wrongLettersArray = [];
 
+let isWordFetched = false;
+let selectedWord;
 
-function displayWord() {
+async function displayWord() {
+    // Check if the word has already been fetched for this game session
+    if (!isWordFetched) {
+        const req = await fetch("https://trouve-mot.fr/api/random");
+        const data = await req.json();
+        selectedWord = data[0].name;
+        isWordFetched = true;
+        console.log(selectedWord);
+    }
+
     word.innerHTML = `
         ${
             selectedWord.split('').map(letter => `
@@ -36,8 +47,10 @@ function displayWord() {
 
 function displayPopup() {
     const guessingWord = word.innerText.replace(/\n/g, '');
+    const displayGuessingWord = document.getElementById("display-guessing-word");
     if (guessingWord === selectedWord) {
         finalMessage.innerText = "Bravo, tu as gagné! 😃";
+        displayGuessingWord.style.display = "none";
         popup.style.display = "flex";
     }
 }
@@ -50,7 +63,7 @@ function displayNotification() {
     }, 2000);
 }
 
-function updateWrongLetterEl() {
+async function updateWrongLetterEl() {
     // display wrong letters
     wrongLetters.innerHTML = `${wrongLettersArray.map(letter => `<span>${letter}</span>`)}`;
 
@@ -70,7 +83,7 @@ function updateWrongLetterEl() {
 
         finalMessage.innerText = "Malheureusement, tu as perdu! 😔";
         displayGuessingWord.style.display = "block";
-        displayGuessingWord.innerText = `Mot caché : ${selectedWord}`;
+        displayGuessingWord.innerText = `Mot caché : ${ await selectedWord}`;
         popup.style.display = "flex";
     }
 }
@@ -94,14 +107,15 @@ function toggleDarkMode() {
     }
 }
   
-function resetGame() {
+async function resetGame() {
     // clear arrays
     goodLettersArray.splice(0);
     wrongLettersArray.splice(0);
 
-    selectedWord = words[Math.floor(Math.random() * words.length)];
+    // Allow fetching a new word for the next game session
+    isWordFetched = false;
 
-    displayWord();
+    await displayWord();
 
     updateWrongLetterEl();
 }
