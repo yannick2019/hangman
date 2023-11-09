@@ -8,6 +8,7 @@ const reset = document.querySelector(".reset");
 const letter = document.querySelector(".letter");
 const instructions = document.querySelector(".instructions");
 const darkModeToggle = document.getElementById("dark-mode-toggle");
+const virtualKeyboard = document.getElementById("virtual-keyboard");
 
 
 const hangman = document.querySelectorAll(".hangman");
@@ -113,11 +114,33 @@ function displayRules() {
     });
 }
 
+
 window.addEventListener("keydown", e => {
 
     const letter = e.key.toLowerCase();
 
     if (/^[a-zàâçéèêëîïôûùüÿœæ]$/.test(letter)) {
+        if (selectedWord.includes(letter)) {
+            if (!goodLettersArray.includes(letter)) {
+                goodLettersArray.push(letter);
+                displayWord();
+            } else {
+                displayNotification();
+            }
+        } else {
+            if (!wrongLettersArray.includes(letter)) {
+                wrongLettersArray.push(letter);
+                updateWrongLetterEl();
+            } else {
+                displayNotification();
+            }
+        }
+    }
+});
+
+virtualKeyboard.addEventListener("click", (e) => {
+    if (e.target.classList.contains("keyboard-button")) {
+        const letter = e.target.textContent.toLowerCase();
         if (selectedWord.includes(letter)) {
             if (!goodLettersArray.includes(letter)) {
                 goodLettersArray.push(letter);

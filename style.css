@@ -40,6 +40,7 @@ ul {
 
 .img {
     padding: 2px;
+    margin-top: 4px;
 }
 
 /* Toggle button dark/light mode  START */
@@ -129,13 +130,13 @@ h1 {
     width: 450px;
     margin-top: 12px;
     position: relative;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .figure-content {
     stroke: black;
     stroke-width: 4px;
     stroke-linecap: round;
-
     fill: transparent;
 }
 
@@ -164,7 +165,7 @@ h1 {
 .word {
     display: flex;
     position: absolute;
-    bottom: 26px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -315,6 +316,31 @@ h1.dark-mode {
 /* light/dark mode END */
 
 
+/* virtual keyboard */
+#virtual-keyboard {
+    width: 360px;
+    margin-top: 10px;
+    padding: 4px;
+    position: absolute;
+    top: 37rem; 
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.keyboard-button {
+    width: 32px;
+    padding: 4px;
+    font-size: 18px;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    border: none;
+}
+
+
 @media screen and (max-width: 375px) {
     body {
         font-size: 92%;
@@ -332,5 +358,11 @@ h1.dark-mode {
 
     .game-content {
         width: 400px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    #virtual-keyboard {
+        display: flex;
     }
 }
