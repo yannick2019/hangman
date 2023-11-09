@@ -313,6 +313,11 @@ h1.dark-mode {
     color: #222222;
 }
 
+.dark-mode .keyboard-button {
+    background-color: #3d3b3b;
+    color: #fff;
+}
+
 /* light/dark mode END */
 
 
@@ -322,7 +327,7 @@ h1.dark-mode {
     margin-top: 10px;
     padding: 5px;
     position: absolute;
-    top: 37rem; 
+    top: 38rem; 
     display: none;
     flex-wrap: wrap;
     align-items: center;

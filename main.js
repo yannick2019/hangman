@@ -13,7 +13,7 @@ const virtualKeyboard = document.getElementById("virtual-keyboard");
 
 const hangman = document.querySelectorAll(".hangman");
 
-const words = ["java", "python", "php", "javascript", "vite", "bootstrap"];
+const words = ["java", "python", "php", "javascript", "vite", "bootstrap", "laravel", "react", "github"];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
