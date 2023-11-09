@@ -141,7 +141,12 @@ h1 {
 
 .hangman {
     display: none;
+    transition: transform 0.2s ease-in-out;
 } 
+
+.hangman.shake {
+    transform: translateX(5px);
+}
 
 .wrong-letters-container {
     position: absolute;

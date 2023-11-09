@@ -12,6 +12,10 @@ const virtualKeyboard = document.getElementById("virtual-keyboard");
 
 
 const hangman = document.querySelectorAll(".hangman");
+const goodLetterSound = new Audio('./assets/short-success-sound.mp3');
+const playerWinSound = new Audio('./assets/win-sound.mp3');
+const playerLoseSound = new Audio('./assets/negative_beeps.mp3');
+const wrongLetterSound = new Audio('./assets/failure-drum-sound.mp3');
 
 //const words = ["java", "python", "php", "javascript", "vite", "bootstrap", "laravel", "react", "github"];
 
@@ -49,6 +53,7 @@ function displayPopup() {
     const guessingWord = word.innerText.replace(/\n/g, '');
     const displayGuessingWord = document.getElementById("display-guessing-word");
     if (guessingWord === selectedWord) {
+        playerWinSound.play();
         finalMessage.innerText = "Bravo, tu as gagné! 😃";
         displayGuessingWord.style.display = "none";
         popup.style.display = "flex";
@@ -72,6 +77,12 @@ async function updateWrongLetterEl() {
         const errors = wrongLettersArray.length;
         if (index < errors) {
             partOfBody.style.display = "block";
+            // Add shake animation to wrong guesses
+            partOfBody.classList.add("shake");
+            wrongLetterSound.play();
+            setTimeout(() => {
+                partOfBody.classList.remove("shake");
+            }, 200);
         } else {
             partOfBody.style.display = "none";
         }
@@ -82,6 +93,7 @@ async function updateWrongLetterEl() {
         const displayGuessingWord = document.getElementById("display-guessing-word");
 
         finalMessage.innerText = "Malheureusement, tu as perdu! 😔";
+        playerLoseSound.play();
         displayGuessingWord.style.display = "block";
         displayGuessingWord.innerText = `Mot caché : ${ await selectedWord}`;
         popup.style.display = "flex";
@@ -137,6 +149,7 @@ window.addEventListener("keydown", e => {
         if (selectedWord.includes(letter)) {
             if (!goodLettersArray.includes(letter)) {
                 goodLettersArray.push(letter);
+                goodLetterSound.play();
                 displayWord();
             } else {
                 displayNotification();
@@ -158,6 +171,7 @@ virtualKeyboard.addEventListener("click", (e) => {
         if (selectedWord.includes(letter)) {
             if (!goodLettersArray.includes(letter)) {
                 goodLettersArray.push(letter);
+                goodLetterSound.play();
                 displayWord();
             } else {
                 displayNotification();
