@@ -12,7 +12,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
 }
 
 a {
@@ -126,7 +125,7 @@ h1 {
 
 .game-content {
     padding: 20px 30px;
-    height: 350px;
+    height: 330px;
     width: 450px;
     margin-top: 12px;
     position: relative;
@@ -324,10 +323,9 @@ h1.dark-mode {
 /* virtual keyboard */
 #virtual-keyboard {
     width: 400px;
-    margin-top: 10px;
     padding: 5px;
     position: absolute;
-    top: 38rem; 
+    top: 37rem; 
     display: none;
     flex-wrap: wrap;
     align-items: center;
