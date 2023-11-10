@@ -12,10 +12,10 @@ const virtualKeyboard = document.getElementById("virtual-keyboard");
 
 
 const hangman = document.querySelectorAll(".hangman");
-const goodLetterSound = new Audio('./assets/short-success-sound.mp3');
-const playerWinSound = new Audio('./assets/win-sound.mp3');
-const playerLoseSound = new Audio('./assets/negative_beeps.mp3');
-const wrongLetterSound = new Audio('./assets/failure-drum-sound.mp3');
+const goodLetterSound = new Audio('./short-success-sound.mp3');
+const playerWinSound = new Audio('./win-sound.mp3');
+const playerLoseSound = new Audio('./negative_beeps.mp3');
+const wrongLetterSound = new Audio('./failure-drum-sound.mp3');
 
 //const words = ["java", "python", "php", "javascript", "vite", "bootstrap", "laravel", "react", "github"];
 
