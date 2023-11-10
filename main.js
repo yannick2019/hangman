@@ -34,7 +34,6 @@ async function displayWord() {
         const data = await req.json();
         selectedWord = data[0].name;
         isWordFetched = true;
-        console.log(selectedWord);
     }
 
     word.innerHTML = `
